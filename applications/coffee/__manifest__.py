@@ -1,0 +1,21 @@
+{
+    'name': 'Coffee_management',
+    'version': '1',
+    'category': 'Extra Tools',
+    'summary': 'module for managing the school',
+    'sequence': '10',
+    'author': 'Hoa',
+    'maintainer': 'Odoo Mates',
+    'website': 'odoomates.com',
+    'licence': 'AGPL-3',
+    'depends': ['base', 'mail'],
+    'demo': [],
+    'data': [
+        'data/sequence.xml',
+        'views/product.xml',
+        'views/menu.xml',
+    ],
+    'installable': True,
+    'application': True,
+    'auto_install': False,
+}

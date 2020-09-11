@@ -1,0 +1,82 @@
+<odoo>
+
+    <record id="action_employee" model="ir.actions.act_window">
+        <field name="name">Employees</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">coffee.employee</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+<!--        <field name="context">{'search_default_filter_is_expired_false': 1}</field>-->
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create your product!
+            </p>
+        </field>
+        <!--<name_module>.id -->
+<!--         <field name="search_view_id" ref="coffee_product_search" />-->
+
+
+    </record>
+
+
+     <record id="action_product_is_expired_false" model="ir.actions.act_window">
+        <field name="name">products is expired false</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">coffee.product</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="context">{'search_default_filter_is_expired_false': 1}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create your product!
+            </p>
+        </field>
+        <!--<name_module>.id -->
+         <field name="search_view_id" ref="coffee_product_search" />
+
+
+    </record>
+
+     <record id="action_product_is_expired_true" model="ir.actions.act_window">
+        <field name="name">products is expired true</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">coffee.product</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="context">{'search_default_filter_is_expired': 1}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create your product!
+            </p>
+        </field>
+        <!--<name_module>.id -->
+        <field name="search_view_id" ref="coffee_product_search" />
+    </record>
+
+<!--    <record id="action_product" model="ir.actions.act_window">-->
+<!--        <field name="name">products</field>-->
+<!--        <field name="type">ir.actions.act_window</field>-->
+<!--        <field name="res_model">coffee.product</field>-->
+<!--        <field name="view_type">form</field>-->
+<!--        <field name="view_mode">tree,form</field>-->
+<!--        <field name="context">{'search_default_filter_is_expired': 1}</field>-->
+<!--        <field name="help" type="html">-->
+<!--            <p class="o_view_nocontent_smiling_face">-->
+<!--                Create your product!-->
+<!--            </p>-->
+<!--        </field>-->
+<!--        &lt;!&ndash;<name_module>.id &ndash;&gt;-->
+<!--&lt;!&ndash;        <field name="search_view_id" ref="coffee_product_search" />&ndash;&gt;-->
+<!--    </record>-->
+
+    <menuitem id="coffee_root" name="coffee" sequence="0"/>
+<!--    <menuitem id="coffee_management" name="Management" parent="coffee_root" />-->
+
+    <menuitem id="coffee_product" name="Product" parent="coffee_root"/>
+    <menuitem id="coffee_employee" name="Employee" parent="coffee_root" action="action_employee" sequence="10"/>
+
+    <menuitem id="coffee_product_is_expired_true" name="Product expired true" string="Expired True" parent="coffee_product" action="action_product_is_expired_true"/>
+    <menuitem id="coffee_product_is_expired_false" name="Product expired false" string="Expired False" parent="coffee_product" action="action_product_is_expired_false"/>
+
+<!--    <menuitem id="coffee_expired_prodcut" name="Expired Product" parent="coffee_management"  />-->
+</odoo>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <record id="student_tree" model="ir.ui.view">
+        <field name="name">school.student.tree</field>
+        <field name="model">school.student</field>
+        <field name="arch" type="xml">
+            <tree string="Students">
+                <field name="student_name"/>
+                <field name="student_age"/>
+                 <field name="notes"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="student_form" model="ir.ui.view">
+        <field name="name">school.student.form</field>
+        <field name="model">school.student</field>
+        <field name="arch" type="xml">
+            <form string="Students">
+                <sheet>
+                    <field name="image" widget="image" class="eo_avatar"/>
+                    <group>
+                        <group>
+                            <field name="student_name"/>
+                        </group>
+                        <group>
+                            <field name="student_age"/>
+                        </group>
+                    </group>
+                    <group>
+                        <field name="notes"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_student" model="ir.actions.act_window">
+        <field name="name">Students</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">school.student</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+          <p class="o_view_nocontent_smiling_face">
+            Create a contact in your address book
+          </p><p>
+            Odoo helps you to easily track all activities related to a customer.
+          </p>
+        </field>
+    </record>
+
+    <menuitem id="school_root" name="School" sequence="0"/>
+    <menuitem id="school_patient" name="Students" parent="school_root" action="action_student"/>
+</odoo>
